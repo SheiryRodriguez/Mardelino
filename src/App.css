@@ -1,3 +1,61 @@
+.navbar {
+  position: sticky;
+  top: 12px;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 12px 20px 0;
+  padding: 10px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 999px;
+  background: linear-gradient(120deg, #eee5ff, #d9c4ff 55%, #cbb0f4);
+  box-shadow: 0 8px 24px rgba(91, 48, 143, 0.16);
+  backdrop-filter: blur(12px);
+}
+
+.navbar a {
+  padding: 8px 18px;
+  border-radius: 999px;
+  color: #4a2a72;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.navbar a:hover {
+  color: #fff;
+  background: #8052b5;
+  box-shadow: 0 4px 12px rgba(74, 42, 114, 0.2);
+  transform: translateY(-1px);
+}
+
+.navbar a:focus-visible {
+  outline: 3px solid #633b94;
+  outline-offset: 3px;
+}
+
+@media (max-width: 520px) {
+  .navbar {
+    gap: 4px;
+    margin-inline: 12px;
+    padding: 8px;
+    border-radius: 22px;
+  }
+
+  .navbar a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
 .counter {
   font-size: 16px;
   padding: 5px 10px;
