@@ -9,6 +9,13 @@ function App() {
 
   return (
     <>
+    <nav className="navbar">
+      <a href="#center">Inicio</a>
+      <a href="#next-steps">Productos</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+
       <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
