@@ -47,6 +47,7 @@ function App() {
           </svg>
           <h2>Productos</h2>
           <p> Explora nuestra linea variada de geles y aceites capilares.</p>
+          <Personalizador />
           <ul>
             <li>
               <a href="https://vite.dev/" target="_blank">
