@@ -71,12 +71,12 @@ function App() {
 
     <article className="nosotros-card">
       <h3> Nuestra misión</h3>
-      <p>Aquí va tu texto sobre lo que quieren lograr con sus productos.</p>
+      <p>En Mar de Lino tenemos la misión de ofrecer productos para el cuidado del cabello rizado que nutran, hidraten y resalten su belleza natural. Buscamos brindar experiencias de cuidado que fortalezcan la confianza y el amor propio, a través de alternativas pensadas para las necesidades de cada tipo de rizo.</p>
     </article>
 
     <article className="nosotros-card">
       <h3> Nuestra visión</h3>
-      <p>Aquí va tu texto sobre hacia dónde quieren llegar.</p>
+      <p>Ser una marca referente en el cuidado del cabello rizado, reconocida por la calidad de nuestros productos, la innovación y nuestro compromiso con la belleza natural. Aspiramos a crecer y llegar a más personas, creando una comunidad que celebre la diversidad, autenticidad y libertad de llevar sus rizos con orgullo.</p>
     </article>
   </div>
 </section>
