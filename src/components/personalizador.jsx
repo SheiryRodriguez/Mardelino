@@ -1,4 +1,4 @@
-import "../styles/personalizador.css";
+
 import { useState } from "react";
 import { bases } from "../data/bases";
 import { aromas } from "../data/aromas";

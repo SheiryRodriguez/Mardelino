@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import './App.css'
 import Usuarios from './usuarios/usuarios.jsx'
+import Personalizador from './components/personalizador.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -47,6 +48,7 @@ function App() {
           </svg>
           <h2>Productos</h2>
           <p> Explora nuestra linea variada de geles y aceites capilares.</p>
+
           <Personalizador />
           <ul>
             <li>
