@@ -1,17 +1,14 @@
-import { useState } from 'react';
-import heroImg from './assets/hero.png';
-import reactLogo from './assets/react.svg';
-import bannerImg from './assets/banner.png';
-import viteLogo from './assets/vite.svg';
+import { useState } from "react";
 import "./App.css";
+
+import bannerImg from "./assets/banner.png";
+
 import img1 from "./assets/productos/1.png";
 import img2 from "./assets/productos/2.png";
 import img3 from "./assets/productos/3.png";
 import img4 from "./assets/productos/4.png";
 import img5 from "./assets/productos/5.png";
 import img6 from "./assets/productos/6.png";
-
-
 
 const productos = [
   {
@@ -61,151 +58,185 @@ const productos = [
     precio: 25000,
     descripcion: "Un favorito para el cuidado de los rizos. Ayuda a definir, controlar el frizz y mantener los rizos con una apariencia natural y flexible.",
     imagen: img6
-  },
+  }
 ];
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [cantidades, setCantidades] = useState({}); 
+  const [cantidades, setCantidades] = useState({});
+
+  const cambiarCantidad = (id, cambio) => {
+    setCantidades((prev) => ({
+      ...prev,
+      [id]: Math.max(0, (prev[id] || 0) + cambio)
+    }));
+  };
+
   return (
     <>
-    
-    <nav className="navbar">
-  <a href="#inicio">Inicio</a>
-  <a href="#productos">Productos</a>
-  <a href="#nosotros">Nosotros</a>
-  <a href="#contacto">Contacto</a>
-</nav>
+      {/* NAVEGACIÓN */}
+      <nav className="navbar" aria-label="Navegación principal">
+        <a href="#inicio">Inicio</a>
+        <a href="#productos">Productos</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
 
-    
-<section id="inicio" className="hero-banner">  </section>
-      <section id="center">
-        <div className="banner">
-          <img src={bannerImg} className="base" width="2000" height="1280" alt="" />
-          
-        </div>
-      
-       {/* CONTADOR OCULTO TEMPORALMENTE */}
-         
+      <main className="app-main">
 
-      <div id="productos" className="catalogo">  </div>
-        
-       <div className="catalogo">
-  {productos.map((producto) => (
-    <div className="producto" key={producto.id}>
+        {/* BANNER PRINCIPAL */}
+        <section id="inicio" className="hero-banner">
+          <div className="banner">
+            <img
+              src={bannerImg}
+              alt="MARDELINO - Cuidado natural para tus rizos"
+            />
+          </div>
+        </section>
 
-      <img src={producto.imagen} alt={producto.nombre} />
+        {/* CATÁLOGO */}
+        <section id="productos" className="productos-section">
+          <h2 className="section-title">Nuestros productos</h2>
 
-      <h3>{producto.nombre}</h3>
+          <p className="section-description">
+            Encuentra el cuidado ideal para consentir y resaltar tus rizos.
+          </p>
 
-      <p className="descripcion-producto">
-        {producto.descripcion}
-      </p>
+          <div className="catalogo">
+            {productos.map((producto) => (
+              <article className="producto" key={producto.id}>
 
-      <div className="precio-producto">
-  ${producto.precio.toLocaleString("es-CO")}
-  <span>COP</span>
-</div>
+                <img
+                  src={producto.imagen}
+                  alt={producto.nombre}
+                  loading="lazy"
+                />
 
-<div className="contador-cantidad">
-  <span>Cantidad</span>
+                <h3>{producto.nombre}</h3>
 
-  <div className="contador-controles">
-    <button
-      type="button"
-      onClick={() =>
-        setCantidades((prev) => ({
-          ...prev,
-          [producto.id]: Math.max(0, (prev[producto.id] || 0) - 1),
-        }))
-      }
-    > 
-      −
-    </button>
+                <p className="descripcion-producto">
+                  {producto.descripcion}
+                </p>
 
-    <strong>{cantidades[producto.id] || 0}</strong>
+                <div className="precio-producto">
+                  ${producto.precio.toLocaleString("es-CO")}
+                  <span>COP</span>
+                </div>
 
-    <button
-      type="button"
-      onClick={() =>
-        setCantidades((prev) => ({
-          ...prev,
-          [producto.id]: (prev[producto.id] || 0) + 1,
-        }))
-      }
-    >
-      +
-    </button>
-  </div>
-</div>
+                <div className="contador-cantidad">
+                  <span>Cantidad</span>
 
+                  <div className="contador-controles">
+                    <button
+                      type="button"
+                      onClick={() => cambiarCantidad(producto.id, -1)}
+                      aria-label={`Disminuir cantidad de ${producto.nombre}`}
+                    >
+                      −
+                    </button>
 
-      <a
-        href="https://wa.me/3012008915"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Comprar producto
-      </a>
-    </div>
-  ))}
-</div>
+                    <strong>
+                      {cantidades[producto.id] || 0}
+                    </strong>
 
+                    <button
+                      type="button"
+                      onClick={() => cambiarCantidad(producto.id, 1)}
+                      aria-label={`Aumentar cantidad de ${producto.nombre}`}
+                    >
+                      +
+                    </button>
+                  </div>
+                </div>
 
-<section className="nosotros">
-  <h2>Nosotros</h2>
-  <div className="nosotros-grid">
-    <article className="nosotros-card">
-      <h3> Quiénes somos</h3>
-      <p>En MARDELINO, nos apasiona la belleza y el cuidado del cabello. Nuestra misión es ofrecer productos de alta calidad que realcen la belleza natural de cada persona. Con una amplia gama de geles y aceites capilares, nos esforzamos por brindar soluciones efectivas para el cuidado del cabello, promoviendo la salud y el brillo en cada hebra. Creemos que cada individuo merece sentirse seguro y radiante, y estamos comprometidos a ayudar a nuestros clientes a lograrlo.</p>
-    </article>
-
-    <article className="nosotros-card">
-      <h3> Nuestra misión</h3>
-      <p>En Mar de Lino tenemos la misión de ofrecer productos para el cuidado del cabello rizado que nutran, hidraten y resalten su belleza natural. Buscamos brindar experiencias de cuidado que fortalezcan la confianza y el amor propio, a través de alternativas pensadas para las necesidades de cada tipo de rizo.</p>
-    </article>
-
-    <article className="nosotros-card">
-      <h3> Nuestra visión</h3>
-      <p>Ser una marca referente en el cuidado del cabello rizado, reconocida por la calidad de nuestros productos, la innovación y nuestro compromiso con la belleza natural. Aspiramos a crecer y llegar a más personas, creando una comunidad que celebre la diversidad, autenticidad y libertad de llevar sus rizos con orgullo.</p>
-    </article>
-  </div>
-</section>
-          
-                  
-        
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the MARDELINO community</p>
-          <ul>
-            <li>
-              <a href="https://www.instagram.com/mar.delino?xtok=amR2YWY4b2t4amZwte" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
+                <a
+                  className="boton-comprar"
+                  href={`https://wa.me/3012008915?text=${encodeURIComponent(
+                    `Hola, quiero comprar ${cantidades[producto.id] || 1} unidad(es) de ${producto.nombre}.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  
-                </svg>
-                Instagram
-              </a>
-            </li>
-            
-            
-          </ul>
-        </div>
-      
+                  Comprar producto
+                </a>
 
+              </article>
+            ))}
+          </div>
+        </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
+        {/* NOSOTROS */}
+        <section id="nosotros" className="nosotros">
 
+          <h2>Nosotros</h2>
 
-<section id="contacto"> </section>
-      </section>
+          <div className="nosotros-grid">
+
+            <article className="nosotros-card">
+              <h3>Quiénes somos</h3>
+              <p>
+                En MARDELINO, nos apasiona la belleza y el cuidado del
+                cabello. Nuestra misión es ofrecer productos de alta
+                calidad que realcen la belleza natural de cada persona.
+                Con una amplia gama de geles y aceites capilares, nos
+                esforzamos por brindar soluciones efectivas para el
+                cuidado del cabello, promoviendo la salud y el brillo
+                en cada hebra. Creemos que cada individuo merece
+                sentirse seguro y radiante, y estamos comprometidos
+                a ayudar a nuestros clientes a lograrlo.
+              </p>
+            </article>
+
+            <article className="nosotros-card">
+              <h3>Nuestra misión</h3>
+              <p>
+                En Mar de Lino tenemos la misión de ofrecer productos
+                para el cuidado del cabello rizado que nutran, hidraten
+                y resalten su belleza natural. Buscamos brindar
+                experiencias de cuidado que fortalezcan la confianza
+                y el amor propio, a través de alternativas pensadas
+                para las necesidades de cada tipo de rizo.
+              </p>
+            </article>
+
+            <article className="nosotros-card">
+              <h3>Nuestra visión</h3>
+              <p>
+                Ser una marca referente en el cuidado del cabello
+                rizado, reconocida por la calidad de nuestros productos,
+                la innovación y nuestro compromiso con la belleza
+                natural. Aspiramos a crecer y llegar a más personas,
+                creando una comunidad que celebre la diversidad,
+                autenticidad y libertad de llevar sus rizos con orgullo.
+              </p>
+            </article>
+
+          </div>
+        </section>
+
+        {/* CONTACTO Y REDES SOCIALES */}
+        <section id="contacto" className="contacto">
+
+          <div className="contacto-contenido">
+            <h2>Conecta con MARDELINO</h2>
+
+            <p>
+              Únete a nuestra comunidad y descubre más sobre
+              el cuidado y la belleza natural de tus rizos.
+            </p>
+
+            <a
+              href="https://www.instagram.com/mar.delino/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="boton-instagram"
+            >
+              Síguenos en Instagram
+            </a>
+          </div>
+
+        </section>
+
+      </main>
     </>
   );
 }
