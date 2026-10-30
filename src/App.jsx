@@ -14,20 +14,62 @@ import img6 from "./assets/productos/6.png";
 
 
 const productos = [
-  { id: 1, nombre: "Aceite de Romero", tipo: "Aceite", precio: 18000, imagen: img1 },
-  { id: 2, nombre: "Aceite de Linaza", tipo: "Aceite", precio: 18000, imagen: img2 },
-  { id: 3, nombre: "Aceite de Manzanilla", tipo: "Aceite", precio: 25000, imagen: img3 },
-  { id: 4, nombre: "Gel de Romero", tipo: "Gel", precio: 18000, imagen: img4 },
-  { id: 5, nombre: "Gel de Manzanilla", tipo: "Gel", precio: 18000, imagen: img5 },
-  { id: 6, nombre: "Aceite de Linaza", tipo: "Gel", precio: 25000, imagen: img6 },
+  {
+    id: 1,
+    nombre: "Aceite de Romero",
+    tipo: "Aceite",
+    precio: 18000,
+    descripcion: "Un aliado para el cuidado capilar que ayuda a mantener el cuero cabelludo en buenas condiciones, aportando suavidad y brillo al cabello.",
+    imagen: img1
+  },
+  {
+    id: 2,
+    nombre: "Aceite de Linaza",
+    tipo: "Aceite",
+    precio: 18000,
+    descripcion: "Ideal para complementar tu rutina capilar. Ayuda a nutrir el cabello, mejorar su apariencia y mantenerlo suave y manejable.",
+    imagen: img2
+  },
+  {
+    id: 3,
+    nombre: "Aceite de Manzanilla",
+    tipo: "Aceite",
+    precio: 25000,
+    descripcion: "Una opción para consentir tu cabello con un cuidado suave. Ayuda a aportar brillo, suavidad y una apariencia saludable.",
+    imagen: img3
+  },
+  {
+    id: 4,
+    nombre: "Gel de Romero",
+    tipo: "Gel",
+    precio: 18000,
+    descripcion: "Define tus rizos y ayuda a mantenerlos en su lugar. Ideal para conseguir una apariencia organizada, con movimiento y definición.",
+    imagen: img4
+  },
+  {
+    id: 5,
+    nombre: "Gel de Manzanilla",
+    tipo: "Gel",
+    precio: 18000,
+    descripcion: "Acompaña tu rutina de definición con una textura pensada para ayudar a controlar el cabello y realzar la forma natural de tus rizos.",
+    imagen: img5
+  },
+  {
+    id: 6,
+    nombre: "Gel de Linaza",
+    tipo: "Gel",
+    precio: 25000,
+    descripcion: "Un favorito para el cuidado de los rizos. Ayuda a definir, controlar el frizz y mantener los rizos con una apariencia natural y flexible.",
+    imagen: img6
+  },
 ];
-
 
 function App() {
   const [count, setCount] = useState(0)
-
+  const [cantidades, setCantidades] = useState({}); 
   return (
     <>
+    
     <nav className="navbar">
   <a href="#inicio">Inicio</a>
   <a href="#productos">Productos</a>
@@ -48,18 +90,67 @@ function App() {
 
       <div id="productos" className="catalogo">  </div>
         
-        <div className="catalogo">
+       <div className="catalogo">
   {productos.map((producto) => (
     <div className="producto" key={producto.id}>
+
       <img src={producto.imagen} alt={producto.nombre} />
+
       <h3>{producto.nombre}</h3>
-      <p>${producto.precio.toLocaleString("es-CO")}</p>
-      <a href="https://wa.me/3012008915" target="_blank">
-        Pedir por WhatsApp
+
+      <p className="descripcion-producto">
+        {producto.descripcion}
+      </p>
+
+      <div className="precio-producto">
+  ${producto.precio.toLocaleString("es-CO")}
+  <span>COP</span>
+</div>
+
+<div className="contador-cantidad">
+  <span>Cantidad</span>
+
+  <div className="contador-controles">
+    <button
+      type="button"
+      onClick={() =>
+        setCantidades((prev) => ({
+          ...prev,
+          [producto.id]: Math.max(0, (prev[producto.id] || 0) - 1),
+        }))
+      }
+    > 
+      −
+    </button>
+
+    <strong>{cantidades[producto.id] || 0}</strong>
+
+    <button
+      type="button"
+      onClick={() =>
+        setCantidades((prev) => ({
+          ...prev,
+          [producto.id]: (prev[producto.id] || 0) + 1,
+        }))
+      }
+    >
+      +
+    </button>
+  </div>
+</div>
+
+
+      <a
+        href="https://wa.me/3012008915"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Comprar producto
       </a>
     </div>
   ))}
 </div>
+
 
 <section className="nosotros">
   <h2>Nosotros</h2>
@@ -81,6 +172,7 @@ function App() {
   </div>
 </section>
           
+                  
         
         <div id="social">
           <svg className="icon" role="presentation" aria-hidden="true">
