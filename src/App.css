@@ -654,3 +654,217 @@ img {
   }
 
 }
+/* HORARIO DE ATENCIÓN */
+
+.horario-atencion {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 22px;
+  text-align: center;
+  background: #fff4f7;
+  border-radius: 16px;
+}
+
+.horario-atencion h3 {
+  margin-bottom: 10px;
+}
+
+.estado-abierto,
+.estado-cerrado {
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.estado-abierto {
+  background: #e5f4e7;
+  color: #276738;
+}
+
+.estado-cerrado {
+  background: #fce8e8;
+  color: #a33b3b;
+}
+
+/* CARRITO */
+
+.carrito-section,
+.formulario-pedido {
+  max-width: 1100px;
+  margin: 55px auto;
+  padding: 30px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.carrito-section h2,
+.formulario-pedido h2 {
+  margin-bottom: 20px;
+}
+
+.carrito-producto {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.carrito-producto img {
+  width: 85px;
+  height: 85px;
+  object-fit: contain;
+}
+
+.carrito-info {
+  flex: 1;
+}
+
+.carrito-info h3 {
+  margin-bottom: 6px;
+}
+
+.carrito-total {
+  text-align: right;
+  margin-top: 25px;
+}
+
+.eliminar-producto {
+  border: none;
+  background: transparent;
+  color: #b34d68;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+.contador-controles {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.contador-controles button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d7a1b3;
+  background: #fff5f8;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* FORMULARIO */
+
+.formulario-contenido {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.formulario-datos form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formulario-datos label {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.formulario-datos input,
+.formulario-datos select,
+.formulario-datos textarea {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ddd;
+  border-radius: 7px;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+.formulario-datos input:focus,
+.formulario-datos select:focus,
+.formulario-datos textarea:focus {
+  outline: 2px solid #dba7ba;
+  border-color: #dba7ba;
+}
+
+.formulario-botones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.formulario-botones button {
+  cursor: pointer;
+  padding: 13px 18px;
+  border-radius: 8px;
+}
+
+.boton-volver {
+  border: 1px solid #d7a1b3;
+  background: white;
+  color: #75465a;
+}
+
+/* RESUMEN */
+
+.resumen-pedido {
+  padding: 22px;
+  background: #fff4f7;
+  border-radius: 12px;
+}
+
+.resumen-producto,
+.resumen-total {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 15px 0;
+}
+
+.nota-domicilio {
+  font-size: 13px;
+  color: #777;
+}
+
+/* CELULARES Y TABLETS */
+
+@media (max-width: 768px) {
+  .formulario-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .carrito-section,
+  .formulario-pedido {
+    margin: 25px 12px;
+    padding: 18px;
+  }
+
+  .carrito-producto {
+    flex-wrap: wrap;
+  }
+
+  .carrito-producto img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .carrito-total {
+    text-align: center;
+  }
+
+  .formulario-botones {
+    flex-direction: column;
+  }
+
+  .formulario-botones button {
+    width: 100%;
+  }
+}
