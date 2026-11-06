@@ -11,10 +11,13 @@ app.use(cors());
 app.use(express.json());
 
 const productosRoutes = require("./routes/productos.js");
+const wabbyRoutes = require("./routes/wabby.js");
 
-console.log("Router importado:", typeof productosRoutes);
+console.log("Router de productos:", typeof productosRoutes);
+console.log("Router de Wabby:", typeof wabbyRoutes);
 
 app.use("/api/productos", productosRoutes);
+app.use("/api/wabby", wabbyRoutes);
 
 app.get("/", (req, res) => {
   res.send("Servidor de Mardelino funcionando 🌿");

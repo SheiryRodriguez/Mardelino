@@ -1,111 +1,125 @@
-import img1 from "../assets/productos/1.png";
-import img2 from "../assets/productos/2.png";
-import img3 from "../assets/productos/3.png";
-import img4 from "../assets/productos/4.png";
-import img5 from "../assets/productos/5.png";
-import img6 from "../assets/productos/6.png";
-import img7 from "../assets/productos/7.png";
-import img8 from "../assets/productos/8.png";
-import img9 from "../assets/productos/9.png";
-import img10 from "../assets/productos/10.png";
-import img11 from "../assets/productos/11.png";
-import img12 from "../assets/productos/12.png";
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
+const Producto = require("./models/Producto");
 
-export const productos = [
+dotenv.config();
+
+const productos = [
   {
-    id: 1,
     nombre: "Aceite de Romero",
     tipo: "Aceite",
     precio: 18000,
     descripcion: "Un aliado para el cuidado capilar que ayuda a mantener el cuero cabelludo en buenas condiciones, aportando suavidad y brillo al cabello.",
-    imagen: img1
+    imagen: "/productos/1.png"
   },
   {
-    id: 2,
     nombre: "Aceite de Linaza",
     tipo: "Aceite",
     precio: 18000,
     descripcion: "Ideal para complementar tu rutina capilar. Ayuda a nutrir el cabello, mejorar su apariencia y mantenerlo suave y manejable.",
-    imagen: img2
+    imagen: "/productos/2.png"
   },
   {
-    id: 3,
     nombre: "Aceite de Manzanilla",
     tipo: "Aceite",
     precio: 18000,
     descripcion: "Una opción para consentir tu cabello con un cuidado suave. Ayuda a aportar brillo, suavidad y una apariencia saludable.",
-    imagen: img3
+    imagen: "/productos/3.png"
   },
   {
-    id: 7,
-    nombre: "Aceite de Orégano",
-    tipo: "Aceite",
-    precio: 17000,
-    descripcion: "Un aliado para el cuidado capilar que ayuda a mantener el cuero cabelludo en buenas condiciones, aportando suavidad y brillo al cabello.",
-    imagen: img7
-  },
-  {
-    id: 8,
-    nombre: "Aceite de Cebolla",
-    tipo: "Aceite",
-    precio: 17000,
-    descripcion: "Nutre el cabello y ayuda a mejorar su apariencia, suavidad y brillo.",
-    imagen: img8
-  },
-  {
-    id: 9,
-    nombre: "Aceite de Anís Estrellado",
-    tipo: "Aceite",
-    precio: 17000,
-    descripcion: "Aporta suavidad, brillo y ayuda a mantener el cabello hidratado. Ideal para complementar tu rutina capilar y mantenerlo saludable.",
-    imagen: img9
-  },
-  {
-    id: 4,
     nombre: "Gel de Romero",
     tipo: "Gel",
     precio: 24000,
     descripcion: "Define tus rizos y ayuda a mantenerlos en su lugar. Ideal para conseguir una apariencia organizada, con movimiento y definición.",
-    imagen: img4
+    imagen: "/productos/4.png"
   },
   {
-    id: 5,
     nombre: "Gel de Manzanilla",
     tipo: "Gel",
     precio: 25000,
     descripcion: "Acompaña tu rutina de definición con una textura pensada para ayudar a controlar el cabello y realzar la forma natural de tus rizos.",
-    imagen: img5
+    imagen: "/productos/5.png"
   },
   {
-    id: 6,
     nombre: "Gel de Linaza",
     tipo: "Gel",
     precio: 25000,
     descripcion: "Un favorito para el cuidado de los rizos. Ayuda a definir, controlar el frizz y mantener los rizos con una apariencia natural y flexible.",
-    imagen: img6
+    imagen: "/productos/6.png"
   },
   {
-    id: 10,
+    nombre: "Aceite de Orégano",
+    tipo: "Aceite",
+    precio: 17000,
+    descripcion: "Un aliado para el cuidado capilar que ayuda a mantener el cuero cabelludo en buenas condiciones, aportando suavidad y brillo al cabello.",
+    imagen: "/productos/7.png"
+  },
+  {
+    nombre: "Aceite de Cebolla",
+    tipo: "Aceite",
+    precio: 17000,
+    descripcion: "Nutre el cabello y ayuda a mejorar su apariencia, suavidad y brillo.",
+    imagen: "/productos/8.png"
+  },
+  {
+    nombre: "Aceite de Anís Estrellado",
+    tipo: "Aceite",
+    precio: 17000,
+    descripcion: "Aporta suavidad, brillo y ayuda a mantener el cabello hidratado. Ideal para complementar tu rutina capilar y mantenerlo saludable.",
+    imagen: "/productos/9.png"
+  },
+  {
     nombre: "Gel de Orégano",
     tipo: "Gel",
     precio: 24000,
     descripcion: "Ayuda a definir los rizos, controlar el frizz y mantener la fijación. Ideal para conseguir una apariencia natural y flexible.",
-    imagen: img10
+    imagen: "/productos/10.png"
   },
   {
-    id: 11,
     nombre: "Gel de Cebolla",
     tipo: "Gel",
     precio: 24000,
     descripcion: "Aporta suavidad, facilita el peinado y ayuda a definir los rizos. Acompaña tu rutina de definición y realza la forma natural de tus rizos.",
-    imagen: img11
+    imagen: "/productos/11.png"
   },
   {
-    id: 12,
     nombre: "Gel de Anís Estrellado",
     tipo: "Gel",
     precio: 25000,
     descripcion: "Ayuda a definir los rizos, aportando brillo, suavidad y control.",
-    imagen: img12
+    imagen: "/productos/12.png"
   }
 ];
+
+async function cargarProductos() {
+  try {
+    await mongoose.connect(process.env.MONGODB_URI);
+
+    const operaciones = productos.map((producto) => ({
+      updateOne: {
+        filter: {
+          nombre: producto.nombre,
+          tipo: producto.tipo
+        },
+        update: {
+          $set: producto,
+          $setOnInsert: { activo: true }
+        },
+        upsert: true
+      }
+    }));
+
+    await Producto.bulkWrite(operaciones);
+
+    const total = await Producto.countDocuments();
+
+    console.log("Productos cargados correctamente 🌸");
+    console.log("Total de productos en MongoDB:", total);
+  } catch (error) {
+    console.error("Error al cargar productos:", error.message);
+  } finally {
+    await mongoose.disconnect();
+  }
+}
+
+cargarProductos();
