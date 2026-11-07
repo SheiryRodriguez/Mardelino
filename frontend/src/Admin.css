@@ -1,0 +1,227 @@
+/* =================================
+   MAR DE LINO - ADMINISTRACIÓN
+================================= */
+
+.admin-login {
+  min-height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 35px 20px;
+  background:
+    radial-gradient(circle at 15% 15%, #f6dce5 0, transparent 30%),
+    radial-gradient(circle at 90% 85%, #ead4dc 0, transparent 28%),
+    #f8f4f1;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.login-decoration {
+  position: absolute;
+  border: 1px solid rgba(157, 91, 116, 0.13);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.login-decoration-one {
+  width: 390px;
+  height: 390px;
+  top: -190px;
+  right: -100px;
+}
+
+.login-decoration-two {
+  width: 300px;
+  height: 300px;
+  bottom: -160px;
+  left: -100px;
+}
+
+.login-card {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 440px;
+  box-sizing: border-box;
+  padding: 48px 48px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 24px 70px rgba(91, 54, 67, 0.10);
+}
+
+.login-brand {
+  text-align: center;
+  margin-bottom: 42px;
+}
+
+.login-brand-symbol {
+  width: 54px;
+  height: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px;
+  border: 1px solid #bd8b9d;
+  border-radius: 50%;
+  color: #8d526a;
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-style: italic;
+}
+
+.login-brand-name {
+  margin: 0;
+  color: #75485a;
+  font-family: Georgia, serif;
+  font-size: 21px;
+  letter-spacing: 4px;
+}
+
+.login-brand-line {
+  display: block;
+  width: 42px;
+  height: 1px;
+  margin: 15px auto 10px;
+  background: #bd8b9d;
+}
+
+.login-brand-subtitle {
+  margin: 0;
+  color: #a18b91;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+}
+
+.login-heading {
+  margin-bottom: 28px;
+}
+
+.login-eyebrow {
+  color: #a36c80;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.login-heading h1 {
+  margin: 10px 0 8px;
+  color: #513b43;
+  font-family: Georgia, serif;
+  font-size: 34px;
+  font-weight: 400;
+}
+
+.login-heading p {
+  margin: 0;
+  color: #8b7b80;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.login-field label {
+  color: #5e4850;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.login-field input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px 15px;
+  border: 1px solid #e9dce1;
+  border-radius: 3px;
+  outline: none;
+  background: #fdfbfc;
+  color: #55434a;
+  font-family: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.login-field input::placeholder {
+  color: #b5a6ab;
+}
+
+.login-field input:focus {
+  border-color: #a96f85;
+  box-shadow: 0 0 0 3px rgba(169, 111, 133, 0.10);
+}
+
+.login-button {
+  width: 100%;
+  margin-top: 5px;
+  padding: 15px;
+  border: none;
+  border-radius: 3px;
+  background: #815367;
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.login-button:hover:not(:disabled) {
+  background: #684153;
+  transform: translateY(-1px);
+}
+
+.login-button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.login-error {
+  margin: -5px 0 0;
+  color: #b04458;
+  font-size: 12px;
+  text-align: center;
+}
+
+.login-footer {
+  margin-top: 38px;
+  padding-top: 20px;
+  border-top: 1px solid #f0e7ea;
+  text-align: center;
+}
+
+.login-footer span {
+  color: #9b7483;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.login-footer p {
+  margin: 7px 0 0;
+  color: #b2a4a9;
+  font-size: 10px;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 38px 25px 25px;
+  }
+
+  .login-heading h1 {
+    font-size: 30px;
+  }
+}

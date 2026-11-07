@@ -1,28 +1,33 @@
-import "./App.css";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import "./Admin.css";
+import Home from "./pages/Home";
+import GestionProducto from "./pages/GestionProducto";
+import Login from "./pages/Login";
 
-import Navbar from "./components/Navbar";
-import Banner from "./components/Banner";
-import Catalogo from "./components/Catalogo";
-import Nosotros from "./components/Nosotros";
-import Contacto from "./components/Contacto";
+function RutaProtegida({ children }) {
+  const token = sessionStorage.getItem("tokenAdmin");
+
+  return token ? children : <Navigate to="/admin" replace />;
+}
 
 function App() {
   return (
-    <>
-      <Navbar />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <main className="app-main">
+        <Route path="/admin" element={<Login />} />
 
-        <Banner />
-
-        <Catalogo />
-
-        <Nosotros />
-
-        <Contacto />
-
-      </main>
-    </>
+        <Route
+          path="/productos"
+          element={
+            <RutaProtegida>
+              <GestionProducto />
+            </RutaProtegida>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

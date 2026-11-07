@@ -242,7 +242,7 @@ img {
 
   margin: 10px 0 18px;
 
-  color: #9f6179;
+  color: #cf8ba2;
   font-size: 14px;
   font-weight: 700;
 }
@@ -279,7 +279,7 @@ img {
 }
 
 .contador-controles button:hover {
-  background: #bd75a0;
+  background: #ebbbd8;
 }
 
 .contador-controles strong {
@@ -314,7 +314,7 @@ img {
 }
 
 .boton-comprar:hover {
-  background: #bd75a0;
+  background: #e4afd1;
   transform: scale(1.03);
 }
 
@@ -912,7 +912,7 @@ img {
 }
 
 .controles-cantidad button:hover {
-  background: #d77fa3;
+  background: #eba0bf;
   transform: scale(1.1);
 }
 

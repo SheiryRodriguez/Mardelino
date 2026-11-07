@@ -26,6 +26,12 @@ function Catalogo({ agregarProducto }) {
       });
   }, []);
 
+  const productosOrdenados = [...productos].sort((a, b) => {
+    if (a.tipo === "Aceite" && b.tipo === "Gel") return -1;
+    if (a.tipo === "Gel" && b.tipo === "Aceite") return 1;
+    return 0;
+  });
+
   return (
     <section id="productos" className="productos-section">
       <h2 className="section-title">
@@ -41,7 +47,7 @@ function Catalogo({ agregarProducto }) {
       {error && <p>{error}</p>}
 
       <div className="catalogo">
-        {productos.map((producto) => (
+        {productosOrdenados.map((producto) => (
           <ProductoCard
             key={producto._id}
             producto={producto}

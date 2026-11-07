@@ -3,6 +3,8 @@ const router = express.Router();
 
 const Producto = require("../models/Producto");
 
+const protegerAdmin = require("../middleware/protegerAdmin");
+
 // 1. Obtener todos los productos activos
 router.get("/", async (req, res) => {
   try {
@@ -17,7 +19,7 @@ router.get("/", async (req, res) => {
 });
 
 // 2. Guardar un producto nuevo
-router.post("/", async (req, res) => {
+router.post("/",protegerAdmin,async (req, res) => {
   try {
     const nuevoProducto = new Producto(req.body);
     const productoGuardado = await nuevoProducto.save();
@@ -32,7 +34,7 @@ router.post("/", async (req, res) => {
 });
 
 // 3. Editar un producto
-router.put("/:id", async (req, res) => {
+router.put("/:id",protegerAdmin,async (req, res) => {
   try {
     const productoActualizado = await Producto.findByIdAndUpdate(
       req.params.id,
@@ -56,7 +58,7 @@ router.put("/:id", async (req, res) => {
 });
 
 // 4. Desactivar un producto
-router.delete("/:id", async (req, res) => {
+router.delete("/:id",protegerAdmin,async (req, res) => {
   try {
     const producto = await Producto.findByIdAndUpdate(
       req.params.id,
