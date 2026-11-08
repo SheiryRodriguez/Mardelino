@@ -71,7 +71,7 @@ function ProductoCard({ producto, onAgregar }) {
         onClick={agregarAlPedido}
         disabled={cantidad === 0}
       >
-        Agregar al pedido
+        Agregar al Carrito
       </button>
 
     </article>

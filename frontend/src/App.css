@@ -938,3 +938,410 @@ img {
   opacity: 0.55;
   cursor: not-allowed;
 }
+
+/* ===== CARRITO MAR DE LINO ===== */
+
+.navbar-carrito {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid #e8ccd9;
+  border-radius: 30px;
+  padding: 9px 15px;
+  background: #fff8fb;
+  color: #805366;
+  font: inherit;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.navbar-carrito:hover {
+  background: #f6e4ec;
+}
+
+.carrito-icono {
+  font-size: 18px;
+}
+
+.carrito-contador {
+  display: grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 50px;
+  background: #a76d86;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.carrito-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+  background: rgba(42, 29, 36, 0.42);
+  animation: aparecerCarrito 0.25s ease;
+}
+
+.carrito-panel {
+  display: flex;
+  flex-direction: column;
+  width: min(440px, 100%);
+  height: 100%;
+  background: #fffdfc;
+  box-shadow: -8px 0 35px rgba(50, 30, 40, 0.12);
+  animation: deslizarCarrito 0.3s ease;
+}
+
+.carrito-encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 27px 25px;
+  border-bottom: 1px solid #f0e5e9;
+}
+
+.carrito-etiqueta {
+  color: #a77b8d;
+  font-size: 10px;
+  letter-spacing: 3px;
+}
+
+.carrito-encabezado h2 {
+  margin: 7px 0 0;
+  color: #684657;
+  font-family: Georgia, serif;
+  font-size: 27px;
+  font-weight: normal;
+}
+
+.carrito-cerrar {
+  width: 37px;
+  height: 37px;
+  border: none;
+  border-radius: 50%;
+  background: #f8edf2;
+  color: #805366;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.carrito-productos {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px 22px;
+}
+
+.carrito-producto {
+  display: grid;
+  grid-template-columns: 76px minmax(0, 1fr) auto;
+  gap: 13px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #f1e8eb;
+}
+
+.carrito-producto img {
+  width: 76px;
+  height: 85px;
+  object-fit: contain;
+  background: white;
+  border-radius: 9px;
+}
+
+.carrito-producto-info h3 {
+  margin: 0 0 6px;
+  color: #684657;
+  font-size: 14px;
+}
+
+.carrito-producto-info p {
+  margin: 0 0 10px;
+  color: #947c86;
+  font-size: 12px;
+}
+
+.carrito-controles {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.carrito-controles button {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ead5df;
+  border-radius: 50%;
+  background: #fff8fb;
+  color: #805366;
+  cursor: pointer;
+}
+
+.carrito-controles span {
+  color: #684657;
+  font-size: 13px;
+}
+
+.carrito-producto-final {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+}
+
+.carrito-producto-final strong {
+  color: #805366;
+  font-size: 12px;
+}
+
+.carrito-producto-final button {
+  border: none;
+  background: transparent;
+  color: #ad788d;
+  font-size: 11px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.carrito-resumen {
+  padding: 23px 25px;
+  border-top: 1px solid #f0e5e9;
+  background: #fff9fb;
+}
+
+.carrito-resumen > div {
+  display: flex;
+  justify-content: space-between;
+  color: #684657;
+}
+
+.carrito-resumen > div strong {
+  font-size: 18px;
+}
+
+.carrito-resumen p,
+.carrito-resumen small {
+  color: #9b8490;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+.carrito-resumen > button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 30px;
+  background: #a76d86;
+  color: white;
+  font-size: 14px;
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+.carrito-vacio {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  text-align: center;
+}
+
+.carrito-vacio > span {
+  color: #bd91a5;
+  font-size: 55px;
+}
+
+.carrito-vacio h3 {
+  color: #684657;
+  font-family: Georgia, serif;
+  font-size: 22px;
+}
+
+.carrito-vacio p {
+  color: #927d87;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.carrito-vacio button {
+  padding: 12px 22px;
+  border: none;
+  border-radius: 25px;
+  background: #a76d86;
+  color: white;
+  cursor: pointer;
+}
+
+@keyframes deslizarCarrito {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes aparecerCarrito {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (max-width: 600px) {
+  .navbar-carrito {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+
+  .carrito-panel {
+    width: 100%;
+  }
+
+  .carrito-producto {
+    grid-template-columns: 65px minmax(0, 1fr) auto;
+    gap: 9px;
+  }
+
+  .carrito-producto img {
+    width: 65px;
+    height: 75px;
+  }
+}
+/* FORMULARIO DE PEDIDO */
+.formulario-pedido {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 24px;
+  color: #604650;
+}
+
+.formulario-pedido h2 {
+  color: #a85f7b;
+  font-family: inherit;
+  margin: 18px 0 8px;
+}
+
+.formulario-pedido h3 {
+  color: #a85f7b;
+  font-size: 16px;
+  margin: 22px 0 12px;
+  border-bottom: 1px solid #f1dce5;
+  padding-bottom: 8px;
+}
+
+.formulario-pedido p {
+  color: #907780;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.formulario-pedido form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.formulario-pedido label {
+  color: #765663;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 7px;
+}
+
+.formulario-pedido input:not([type="checkbox"]),
+.formulario-pedido select,
+.formulario-pedido textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid #ead2dc;
+  border-radius: 10px;
+  background: #fffafb;
+  color: #604650;
+  font: inherit;
+  outline: none;
+}
+
+.formulario-pedido input:focus,
+.formulario-pedido select:focus,
+.formulario-pedido textarea:focus {
+  border-color: #c982a0;
+  box-shadow: 0 0 0 3px #f8e8ef;
+}
+
+.formulario-pedido textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.formulario-consentimiento {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  line-height: 1.5;
+  font-weight: 400 !important;
+}
+
+.formulario-consentimiento input {
+  margin-top: 3px;
+  accent-color: #bd7894;
+}
+
+.formulario-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 15px;
+  background: #fbf0f4;
+  border-radius: 12px;
+}
+
+.formulario-total strong {
+  color: #a85f7b;
+}
+
+.formulario-pedido button[type="submit"],
+.carrito-confirmacion button {
+  border: none;
+  border-radius: 25px;
+  padding: 13px 18px;
+  background: #bd7894;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.formulario-pedido button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.formulario-volver {
+  border: none;
+  background: transparent;
+  color: #a85f7b;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 5px 0;
+}
+
+.carrito-confirmacion {
+  margin: auto;
+  padding: 30px 22px;
+  text-align: center;
+  color: #765663;
+}
+
+.carrito-confirmacion h2 {
+  color: #a85f7b;
+}
+
+.carrito-confirmacion span {
+  font-size: 42px;
+  color: #bd7894;
+}
