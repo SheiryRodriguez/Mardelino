@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./Admin.css";
 import Home from "./pages/Home";
+import Nosotros from "./pages/Nosotros";
 import GestionProducto from "./pages/GestionProducto";
 import Login from "./pages/Login";
 
@@ -15,6 +16,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+          
+        <Route path="/nosotros" element={<Nosotros />} />
 
         <Route path="/admin" element={<Login />} />
 

@@ -1345,3 +1345,167 @@ img {
   font-size: 42px;
   color: #bd7894;
 }
+
+/*logo admin*/
+.login-brand-logo {
+  width: 100px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== NUEVA IDENTIDAD DE NAVEGACIÓN ===== */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 12px 5%;
+  background: #fffaf5;
+  border-bottom: 1px solid #eee2e9;
+  box-shadow: 0 3px 15px rgba(75, 43, 83, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar-marca {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar-logo {
+  width: 70%;
+  height: 68px;
+  object-fit: contain;
+}
+
+.navbar-nombre {
+  display: flex;
+  flex-direction: column;
+  color: #684477;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.navbar-nombre small {
+  margin-top: 3px;
+  color: #ad8b9e;
+  font-size: 8px;
+  letter-spacing: 1.4px;
+  font-weight: 500;
+}
+
+.navbar-enlaces {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 27px;
+}
+
+.navbar-enlaces a {
+  color: #705b70;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+.navbar-enlaces a:hover {
+  color: #a477a8;
+}
+
+.navbar-carrito {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid #e5d3e7;
+  border-radius: 25px;
+  background: #f7eff7;
+  color: #684477;
+  font-size: 13px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.carrito-icono {
+  width: 19px;
+  height: 19px;
+}
+
+.carrito-contador {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 19px;
+  height: 19px;
+  padding: 0 4px;
+  border-radius: 50%;
+  background: #8b6697;
+  color: white;
+  font-size: 11px;
+}
+
+/* Adaptación a celulares */
+@media (max-width: 700px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 4%;
+    gap: 12px;
+  }
+
+  .navbar-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navbar-enlaces {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10px;
+    overflow-x: auto;
+  }
+
+  .navbar-enlaces a {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  .navbar-carrito {
+    margin-left: auto;
+    padding: 8px 11px;
+  }
+}
+
+.navbar {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0 auto;
+  left: ;
+  right: 0;
+}
+
+.navbar-marca {
+  margin-right: auto;
+}
+
+.navbar-enlaces {
+  flex: 1;
+}
+
+.navbar-carrito {
+  margin-left: auto;
+}
+
+@media (max-width: 700px) {
+  .navbar-enlaces {
+    flex: none;
+  }
+}

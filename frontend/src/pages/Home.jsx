@@ -4,7 +4,6 @@ import "../App.css";
 import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Catalogo from "../components/Catalogo";
-import Nosotros from "../components/Nosotros";
 import Contacto from "../components/Contacto";
 import Carrito from "../components/carrito";
 
@@ -67,10 +66,7 @@ function Home() {
 
       <main className="app-main">
         <Banner />
-
         <Catalogo agregarProducto={agregarProducto} />
-
-        <Nosotros />
         <Contacto />
       </main>
 

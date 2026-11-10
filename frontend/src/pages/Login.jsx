@@ -40,7 +40,11 @@ function Login() {
 
       <section className="login-card">
         <div className="login-brand">
-          <div className="login-brand-symbol">M</div>
+          <img
+            src="/public/logo.png"
+            alt="Logo de MAR DE LINO"
+            className="login-brand-logo"
+          />
           <p className="login-brand-name">MAR DE LINO</p>
           <span className="login-brand-line"></span>
           <p className="login-brand-subtitle">Cuidado natural para tus rizos</p>
