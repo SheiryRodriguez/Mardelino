@@ -115,7 +115,7 @@ function Wabby() {
         {abierto ? (
           "×"
         ) : (
-          <img src="/public/logo.png" alt="Abrir Wabby" />
+          <img src="/public/Logo.png" alt="Abrir Wabby" />
         )}
       </button>
     </div>
