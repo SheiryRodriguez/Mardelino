@@ -42,7 +42,7 @@ function Navbar({ cantidadCarrito = 0, abrirCarrito }) {
 
         <span className="navbar-nombre">
           MAR DE LINO
-          <small>LINOS · BELLEZA · VIDA</small>
+          <small>LINO · BELLEZA · VIDA</small>
         </span>
       </a>
 

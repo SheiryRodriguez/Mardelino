@@ -60,19 +60,48 @@ console.log("Enviando una pregunta a Gemini...");
 const inicioGemini = Date.now();
 
 console.log(
-  "⏱️ Tiempo de respuesta Gemini:",
+  "⏱ Tiempo de respuesta Gemini:",
   (Date.now() - inicioGemini) / 1000,
   "segundos"
 );
 
-const respuestaGemini = await ai.interactions.create({
-  model: "gemini-3.8-flash",
-  input: prompt,
-  generation_config:{
-    thinking_level:"low"
-    },
-    store:false,
-  });
+let respuestaGemini;
+
+for (let intento = 1; intento <= 3; intento++) {
+  try {
+    respuestaGemini = await ai.interactions.create({
+      model: "gemini-3.5-flash-lite",
+      input: prompt,
+      generation_config: {
+        thinking_level: "low"
+      },
+      store: false,
+    });
+
+    break;
+
+  } catch (error) {
+    const codigo = Number(
+      error.status ||
+      error.code ||
+      String(error.message).match(/\b(429|500|502|503|504)\b/)?.[0]
+    );
+
+    const reintentable = [429, 500, 502, 503, 504].includes(codigo);
+
+    if (!reintentable || intento === 3) {
+      throw error;
+    }
+
+    const espera = 2000 * (2 ** (intento - 1));
+
+    console.log(
+      `Gemini no disponible. Nuevo intento en ${espera / 1000} segundos...`
+    );
+
+    await new Promise(resolve => setTimeout(resolve, espera));
+  }
+}
   
 
 console.log("Gemini respondio:",respuestaGemini.output_text);

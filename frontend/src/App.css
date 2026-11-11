@@ -104,16 +104,32 @@ img {
 }
 
 .navbar-enlaces a {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 17px;
+  border-radius: 30px;
+
   color: #705b70;
+  background: #f5edf7;
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
   white-space: nowrap;
-  transition: color 0.2s ease;
+
+  transition: all 0.3s ease;
 }
 
 .navbar-enlaces a:hover {
-  color: #a477a8;
+  color: #684477;
+  background: #e6d4ed;
+  box-shadow: 0 3px 12px rgba(104, 68, 119, 0.12);
+  transform: translateY(-2px);
+}
+
+.navbar-enlaces a:active {
+  transform: scale(0.96);
 }
 
 .navbar-carrito {
@@ -124,7 +140,7 @@ img {
   gap: 8px;
   margin: 0;
   padding: 10px 15px;
-  border: 1px solid #e5d3e7;
+  border: 1px solid #e7d3e2;
   border-radius: 25px;
   background: #f7eff7;
   color: #684477;
@@ -1355,34 +1371,53 @@ img {
 @media (max-width: 700px) {
   .navbar {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    gap: 12px;
-    padding: 10px 4%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 4%;
+  }
+
+  .navbar-marca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
   }
 
   .navbar .navbar-logo {
     width: 42px;
     height: 42px;
+    flex-shrink: 0;
   }
 
   .navbar-nombre {
     font-size: 13px;
+    white-space: nowrap;
   }
 
   .navbar-enlaces {
     order: 3;
+    flex: 0 0 100%;
     width: 100%;
-    justify-content: space-between;
-    gap: 8px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
     overflow-x: auto;
+    padding: 8px 0 3px;
   }
 
   .navbar-enlaces a {
     font-size: 11px;
+    white-space: nowrap;
   }
 
   .navbar-carrito {
     margin-left: auto;
+    flex-shrink: 0;
     padding: 8px 11px;
   }
 
@@ -1531,4 +1566,476 @@ img {
   .nosotros-card {
     padding: 25px 18px;
   }
+}
+
+/* =========================================
+   MAR DE LINO - NUEVA IDENTIDAD LAVANDA
+========================================= */
+
+:root {
+  --lila-fondo: #F8F4FB;
+  --lila-suave: #F0E7F7;
+  --lila-claro: #E7D9F1;
+  --lila-medio: #C6A9DC;
+  --lila: #A77BC5;
+  --violeta: #806096;
+  --violeta-oscuro: #624574;
+  --crema: #FFFCF7;
+  --verde-natural: #A9B99D;
+  --texto: #55475D;
+  --texto-suave: #817489;
+  --borde: #E9DDED;
+  --sombra: 0 12px 35px rgba(103, 73, 123, 0.09);
+}
+
+/* BASE */
+
+body {
+  color: var(--texto);
+  background: var(--crema);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+::selection {
+  background: var(--lila-claro);
+  color: var(--violeta-oscuro);
+}
+
+/* NAVEGACIÓN */
+
+.navbar {
+  background: rgba(255, 252, 247, 0.96);
+  border-bottom: 1px solid var(--borde);
+  box-shadow: 0 4px 22px rgba(90, 63, 110, 0.07);
+}
+
+.navbar-nombre {
+  color: var(--violeta-oscuro);
+}
+
+.navbar-nombre small {
+  color: var(--lila);
+}
+
+.navbar-enlaces a {
+  color: var(--violeta);
+  background: var(--lila-fondo);
+  border: 1px solid transparent;
+}
+
+.navbar-enlaces a:hover {
+  color: white;
+  background: var(--violeta);
+  box-shadow: 0 5px 15px rgba(128, 96, 150, 0.22);
+}
+
+.navbar-carrito {
+  color: var(--violeta-oscuro);
+  background: var(--lila-suave);
+  border-color: var(--lila-claro);
+}
+
+.navbar-carrito:hover {
+  background: var(--lila-claro);
+}
+
+.carrito-contador {
+  background: var(--violeta);
+}
+
+/* BANNER */
+
+.banner {
+  background: var(--lila-fondo);
+}
+
+/* TÍTULOS */
+
+.section-title {
+  color: var(--violeta-oscuro);
+  letter-spacing: 0.3px;
+}
+
+.section-description {
+  color: var(--texto-suave);
+}
+
+/* CATÁLOGO */
+
+.productos-section {
+  background: linear-gradient(
+    180deg,
+    var(--crema) 0%,
+    var(--lila-fondo) 100%
+  );
+}
+
+.producto {
+  background: white;
+  border: 1px solid var(--borde);
+  border-radius: 24px;
+  box-shadow: var(--sombra);
+}
+
+.producto:hover {
+  box-shadow: 0 18px 40px rgba(103, 73, 123, 0.15);
+}
+
+.producto h3 {
+  color: var(--violeta-oscuro);
+}
+
+.descripcion-producto {
+  color: var(--texto-suave);
+}
+
+.precio-producto {
+  color: var(--violeta-oscuro);
+  background: var(--lila-fondo);
+  border-color: var(--lila-claro);
+}
+
+.precio-producto span {
+  color: var(--violeta);
+}
+
+/* CANTIDADES */
+
+.contador-cantidad {
+  color: var(--violeta);
+}
+
+.contador-controles button,
+.controles-cantidad button {
+  background: var(--lila);
+}
+
+.contador-controles button:hover,
+.controles-cantidad button:hover {
+  background: var(--violeta);
+}
+
+.contador-controles strong,
+.controles-cantidad span {
+  color: var(--violeta-oscuro);
+}
+
+.selector-cantidad {
+  background: var(--lila-fondo);
+  border-color: var(--borde);
+}
+
+.selector-cantidad > span {
+  color: var(--texto);
+}
+
+/* BOTONES */
+
+.boton-comprar {
+  background: var(--violeta);
+  box-shadow: 0 5px 14px rgba(128, 96, 150, 0.16);
+}
+
+.boton-comprar:hover {
+  background: var(--violeta-oscuro);
+  box-shadow: 0 8px 20px rgba(98, 69, 116, 0.2);
+}
+
+/* NOSOTROS */
+
+.nosotros {
+  background: linear-gradient(
+    180deg,
+    var(--lila-fondo),
+    #F4ECF8
+  );
+}
+
+.nosotros > h2,
+.nosotros-card h3 {
+  color: var(--violeta-oscuro);
+}
+
+.nosotros > h2::after {
+  background: linear-gradient(
+    90deg,
+    var(--lila-medio),
+    var(--violeta)
+  );
+}
+
+.nosotros-card {
+  background: rgba(255, 255, 255, 0.94);
+  border-color: var(--borde);
+  box-shadow: var(--sombra);
+}
+
+.nosotros-card::before {
+  background: linear-gradient(
+    90deg,
+    var(--lila-medio),
+    var(--violeta),
+    var(--verde-natural)
+  );
+}
+
+.nosotros-card p {
+  color: var(--texto);
+}
+
+/* CONTACTO */
+
+.contacto {
+  background: linear-gradient(
+    135deg,
+    #EDE2F4,
+    #F8F3FA,
+    #F3EDF5
+  );
+}
+
+.contacto h2 {
+  color: var(--violeta-oscuro);
+}
+
+.contacto p {
+  color: var(--texto);
+}
+
+.boton-instagram {
+  background: var(--violeta);
+  box-shadow: 0 5px 15px rgba(98, 69, 116, 0.16);
+}
+
+.boton-instagram:hover {
+  background: var(--violeta-oscuro);
+}
+
+/* HORARIOS */
+
+.horario-atencion {
+  background: white;
+  border: 1px solid var(--borde);
+  box-shadow: var(--sombra);
+}
+
+.horario-atencion h3 {
+  color: var(--violeta-oscuro);
+}
+
+/* CARRITO */
+
+.carrito-section,
+.formulario-pedido {
+  border: 1px solid var(--borde);
+  box-shadow: var(--sombra);
+}
+
+.carrito-encabezado h2,
+.carrito-producto-info h3 {
+  color: var(--violeta-oscuro);
+}
+
+.carrito-etiqueta {
+  color: var(--violeta);
+}
+
+.carrito-cerrar {
+  background: var(--lila-suave);
+  color: var(--violeta-oscuro);
+}
+
+.carrito-resumen {
+  background: var(--lila-fondo);
+}
+
+.carrito-resumen > button,
+.carrito-vacio button {
+  background: var(--violeta);
+}
+
+.carrito-resumen > button:hover,
+.carrito-vacio button:hover {
+  background: var(--violeta-oscuro);
+}
+
+.carrito-vacio h3 {
+  color: var(--violeta-oscuro);
+}
+
+.carrito-vacio > span {
+  color: var(--lila);
+}
+
+/* FORMULARIOS */
+
+.formulario-pedido h2,
+.formulario-pedido h3,
+.formulario-pedido button[type="submit"],
+.formulario-total strong {
+  color: var(--violeta-oscuro);
+}
+
+.formulario-pedido h3 {
+  border-color: var(--borde);
+}
+
+.formulario-pedido input:not([type="checkbox"]),
+.formulario-pedido select,
+.formulario-pedido textarea,
+.formulario-datos input,
+.formulario-datos select,
+.formulario-datos textarea {
+  border-color: var(--borde);
+  background: var(--crema);
+  color: var(--texto);
+}
+
+.formulario-pedido input:focus,
+.formulario-pedido select:focus,
+.formulario-pedido textarea:focus,
+.formulario-datos input:focus,
+.formulario-datos select:focus,
+.formulario-datos textarea:focus {
+  border-color: var(--lila);
+  box-shadow: 0 0 0 3px rgba(167, 123, 197, 0.14);
+  outline: none;
+}
+
+.formulario-total,
+.resumen-pedido {
+  background: var(--lila-fondo);
+}
+
+.formulario-pedido button[type="submit"],
+.carrito-confirmacion button {
+  background: var(--violeta);
+  color: white;
+}
+
+.formulario-volver,
+.boton-volver {
+  color: var(--violeta-oscuro);
+  border-color: var(--lila-medio);
+}
+
+/* WABBY */
+
+.wabby-boton-flotante {
+  background: linear-gradient(
+    100deg,
+    var(--lila),
+    var(--violeta-oscuro)
+  );
+}
+
+.wabby-ventana {
+  background: var(--crema);
+  border-color: var(--borde);
+}
+
+.wabby-encabezado {
+  background: linear-gradient(
+    120deg,
+    var(--lila-suave),
+    #F8F2FA
+  );
+  border-color: var(--borde);
+}
+
+.wabby-avatar {
+  background: var(--violeta);
+}
+
+.wabby-identidad h3 {
+  color: var(--violeta-oscuro);
+}
+
+.wabby-wabby {
+  background: var(--lila-suave);
+  border-color: var(--borde);
+  color: var(--texto);
+}
+
+.wabby-cliente {
+  background: var(--violeta);
+}
+
+.wabby-formulario input {
+  border-color: var(--borde);
+  color: var(--texto);
+}
+
+.wabby-formulario input:focus {
+  border-color: var(--lila);
+}
+
+.wabby-formulario button {
+  background: var(--violeta);
+}
+
+.wabby-pie {
+  color: var(--texto-suave);
+}
+
+/* INTERACCIONES GENERALES */
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--lila);
+  outline-offset: 3px;
+}
+
+/* CELULARES */
+
+@media (max-width: 600px) {
+  .producto {
+    box-shadow: 0 8px 24px rgba(103, 73, 123, 0.08);
+  }
+
+  .nosotros-card {
+    box-shadow: 0 8px 24px rgba(103, 73, 123, 0.08);
+  }
+}
+
+/* LOGO ORIGINAL DE MAR DE LINO EN WABBY */
+
+/* LOGO ORIGINAL DE MAR DE LINO EN WABBY */
+
+.wabby-boton-flotante {
+  width: 70px;
+  height: 70px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 5px 18px rgba(98, 69, 116, 0.20);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.wabby-boton-flotante img {
+  display: block;
+  width: 109%;
+  height: 109%;
+  object-fit: cover;
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+  margin: 0;
+}
+
+.wabby-boton-flotante:hover {
+  transform: scale(1.06);
 }

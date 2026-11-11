@@ -58,11 +58,15 @@ function Wabby() {
       {abierto && (
         <section className="wabby-ventana">
           <header className="wabby-encabezado">
-            <div className="wabby-avatar">🌸</div>
+            <div className="wabby-avatar">
+              <img src="/public/logo.png" alt="Logo de Mar de Lino" />
+            </div>
+
             <div className="wabby-identidad">
               <h3>Wabby</h3>
               <span>Tu asistente capilar</span>
             </div>
+
             <button
               className="wabby-cerrar"
               onClick={() => setAbierto(false)}
@@ -108,7 +112,11 @@ function Wabby() {
         onClick={() => setAbierto(!abierto)}
         aria-label="Abrir chat con Wabby"
       >
-        {abierto ? "×" : "🌸"}
+        {abierto ? (
+          "×"
+        ) : (
+          <img src="/public/logo.png" alt="Abrir Wabby" />
+        )}
       </button>
     </div>
   );
