@@ -6,6 +6,7 @@ import Banner from "../components/Banner";
 import Catalogo from "../components/Catalogo";
 import Contacto from "../components/Contacto";
 import Carrito from "../components/carrito";
+import Wabby from "../components/Wabby";
 
 function Home() {
   const [carrito, setCarrito] = useState([]);
@@ -77,6 +78,8 @@ function Home() {
         onCambiarCantidad={cambiarCantidad}
         onEliminar={eliminarProducto}
       />
+
+      <Wabby />
     </>
   );
 }

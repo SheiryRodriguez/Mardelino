@@ -8,6 +8,7 @@ const ai = new GoogleGenAI({
 });
 
 router.post("/chat", async (req, res) => {
+  console.log("Wabby recibio una peticion")
   try {
     const { mensaje } = req.body;
 
@@ -18,6 +19,7 @@ router.post("/chat", async (req, res) => {
     }
 
     const productos = await Producto.find({ activo: true });
+    console.log("Productos consultados:", productos.length);
 
     const catalogo = productos.map((producto) => ({
       nombre: producto.nombre,
@@ -53,13 +55,28 @@ REGLAS:
 MENSAJE DEL CLIENTE:
 ${mensaje}
 `;
+console.log("Enviando una pregunta a Gemini...");
 
-    const respuestaGemini = await ai.interactions.create({
-      model: "gemini-3.8-flash",
-      input: prompt,
-      store: false,
-    });
+const inicioGemini = Date.now();
 
+console.log(
+  "⏱️ Tiempo de respuesta Gemini:",
+  (Date.now() - inicioGemini) / 1000,
+  "segundos"
+);
+
+const respuestaGemini = await ai.interactions.create({
+  model: "gemini-3.8-flash",
+  input: prompt,
+  generation_config:{
+    thinking_level:"low"
+    },
+    store:false,
+  });
+  
+
+console.log("Gemini respondio:",respuestaGemini.output_text);
+    
     res.json({
       respuesta: respuestaGemini.output_text,
     });
