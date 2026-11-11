@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import Banner from "../components/Banner";
 import Catalogo from "../components/Catalogo";
 import Contacto from "../components/Contacto";
-import Carrito from "../components/carrito";
+import Carrito from "../components/Carrito";
 import Wabby from "../components/Wabby";
 
 function Home() {
