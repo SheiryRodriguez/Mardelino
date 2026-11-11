@@ -1,9 +1,7 @@
 function Contacto() {
   return (
     <section id="contacto" className="contacto">
-
       <div className="contacto-contenido">
-
         <h2>Conecta con MARDELINO</h2>
 
         <p>
@@ -20,6 +18,12 @@ function Contacto() {
           Síguenos en Instagram
         </a>
 
+        <a
+          href="/admin"
+          className="acceso-administrador"
+        >
+          Acceso administrativo
+        </a>
       </div>
     </section>
   );

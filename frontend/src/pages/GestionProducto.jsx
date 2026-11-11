@@ -144,7 +144,7 @@ function GestionProducto() {
           <p>Administra tu catálogo y mantén tu tienda siempre actualizada.</p>
         </div>
 
-        <div className="admin-header-mark">M</div>
+        
       </header>
 
       <section className="admin-summary">
@@ -242,7 +242,7 @@ function GestionProducto() {
               <input
                 id="imagen"
                 name="imagen"
-                placeholder="/productos/1.png"
+                placeholder="pega aqui el link de la imagen (opcional)"
                 value={formulario.imagen}
                 onChange={manejarCambio}
               />

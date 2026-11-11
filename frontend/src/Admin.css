@@ -700,3 +700,312 @@
     font-size: 22px;
   }
 }
+
+/* IDENTIDAD LILA PASTEL */
+
+.admin-login {
+  background:
+    radial-gradient(circle at 15% 15%, #eee4f7 0, transparent 32%),
+    radial-gradient(circle at 90% 85%, #e4d7f0 0, transparent 30%),
+    #faf7ff;
+  color: #554a61;
+}
+
+.login-decoration {
+  border-color: rgba(128, 97, 159, 0.18);
+}
+
+.login-card {
+  border-color: #e8def0;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 24px 70px rgba(91, 67, 117, 0.14);
+}
+
+.login-brand-symbol {
+  border-color: #c9b3df;
+  color: #80619f;
+}
+
+.login-brand-name,
+.login-heading h1 {
+  color: #5e4778;
+}
+
+.login-brand-line {
+  background: #bda2d8;
+}
+
+.login-brand-subtitle,
+.login-heading p {
+  color: #80748b;
+}
+
+.login-eyebrow,
+.login-footer span {
+  color: #80619f;
+}
+
+.login-field label {
+  color: #5e4778;
+}
+
+.login-field input {
+  border-color: #e8def0;
+  border-radius: 12px;
+  background: #fdfbff;
+  color: #554a61;
+}
+
+.login-field input:focus {
+  border-color: #a786c8;
+  box-shadow: 0 0 0 3px rgba(167, 134, 200, 0.18);
+}
+
+.login-button {
+  border-radius: 12px;
+  background: linear-gradient(100deg, #a786c8, #80619f);
+  box-shadow: 0 7px 16px rgba(128, 97, 159, 0.2);
+}
+
+.login-button:hover:not(:disabled) {
+  background: linear-gradient(100deg, #8969a9, #684e88);
+}
+
+.login-footer {
+  border-top-color: #eee7f4;
+}
+
+.login-footer p {
+  color: #80748b;
+}
+
+.admin-dashboard {
+  background:
+    radial-gradient(ellipse at top left, #f3edfa 0, transparent 42%),
+    linear-gradient(145deg, #faf7ff, #f3edf9);
+  color: #554a61;
+}
+
+.admin-eyebrow,
+.summary-label {
+  color: #80619f;
+}
+
+.admin-header h1,
+.admin-section-heading h2,
+.admin-product-info h3,
+.admin-empty-state h3 {
+  color: #5e4778;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.admin-header p,
+.admin-section-heading p {
+  color: #80748b;
+}
+
+.admin-header-mark {
+  border-color: #c9b3df;
+  color: #80619f;
+}
+
+.admin-summary-card,
+.admin-form-section,
+.admin-products-section {
+  border-color: #e8def0;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 28px rgba(103, 73, 123, 0.08);
+}
+
+.summary-icon {
+  background: #f2ebfa;
+  color: #80619f;
+}
+
+.admin-summary-card strong {
+  color: #5e4778;
+}
+
+.admin-section-flower {
+  color: #bda2d8;
+}
+
+.admin-field label {
+  color: #5e4778;
+}
+
+.admin-field input,
+.admin-field select,
+.admin-field textarea,
+.admin-price-input {
+  border-color: #e8def0;
+  border-radius: 11px;
+  background: #fdfbff;
+  color: #554a61;
+}
+
+.admin-price-input {
+  width: 100%;
+  min-height: 52px;
+  overflow: hidden;
+}
+
+.admin-price-input span {
+  flex: 0 0 auto;
+  padding-left: 15px;
+  color: #80619f;
+  font-size: 16px;
+}
+
+.admin-price-input input {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  min-height: 50px;
+  padding: 13px 15px;
+  border: 0 !important;
+  border-radius: 0;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+  box-shadow: none !important;
+  appearance: textfield;
+}
+
+.admin-price-input input:focus {
+  border: 0 !important;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.admin-price-input input::-webkit-inner-spin-button,
+.admin-price-input input::-webkit-outer-spin-button {
+  margin: 0;
+  appearance: none;
+}
+
+.admin-price-input:focus-within {
+  border-color: #a786c8;
+  box-shadow: 0 0 0 3px rgba(167, 134, 200, 0.16);
+}
+
+.admin-field input:focus,
+.admin-field select:focus,
+.admin-field textarea:focus {
+  border-color: #a786c8;
+  box-shadow: 0 0 0 3px rgba(167, 134, 200, 0.16);
+}
+
+.admin-price-input span {
+  color: #80619f;
+}
+
+.admin-field-help {
+  color: #80748b;
+}
+
+.admin-save-button {
+  border-radius: 12px;
+  background: linear-gradient(100deg, #a786c8, #80619f);
+  box-shadow: 0 6px 14px rgba(128, 97, 159, 0.18);
+}
+
+.admin-save-button:hover:not(:disabled) {
+  background: linear-gradient(100deg, #8969a9, #684e88);
+}
+
+.admin-cancel-button {
+  border-color: #d8c8e7;
+  border-radius: 12px;
+  background: #fff;
+  color: #684e88;
+}
+
+.admin-cancel-button:hover {
+  background: #f4eef9;
+}
+
+.admin-feedback {
+  border-color: #e1d4ed;
+  border-radius: 12px;
+  background: #f5f0fa;
+  color: #684e88;
+}
+
+.admin-products-count {
+  background: #f2ebfa;
+  color: #684e88;
+}
+
+.admin-product-card {
+  overflow: hidden;
+  border-color: #e8def0;
+  border-radius: 17px;
+  box-shadow: 0 6px 18px rgba(103, 73, 123, 0.06);
+}
+
+.admin-product-card:hover {
+  box-shadow: 0 12px 28px rgba(103, 73, 123, 0.13);
+}
+
+.admin-product-image {
+  position: relative;
+  height: 250px;
+  background: #fff;
+}
+
+.admin-product-image img {
+  object-fit: contain;
+}
+
+.admin-product-type {
+  border: 1px solid #e8def0;
+  border-radius: 999px;
+  background: #f8f4fc;
+  color: #684e88;
+}
+
+.admin-product-price {
+  color: #684e88;
+}
+
+.admin-edit-button,
+.admin-delete-button {
+  border-color: #e1d6eb;
+  border-radius: 10px;
+  color: #684e88;
+}
+
+.admin-edit-button:hover {
+  border-color: #80619f;
+  background: #80619f;
+}
+
+.admin-delete-button {
+  border-color: #e7d8e6;
+  color: #875b78;
+}
+
+.admin-delete-button:hover {
+  border-color: #875b78;
+  background: #875b78;
+}
+
+.admin-empty-state {
+  border-color: #d8c8e7;
+  border-radius: 14px;
+  background: #fdfbff;
+  color: #80748b;
+}
+
+.admin-empty-state span {
+  color: #a786c8;
+}
+
+@media (max-width: 650px) {
+  .admin-product-image {
+    height: 230px;
+  }
+}

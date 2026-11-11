@@ -2039,3 +2039,627 @@ textarea:focus-visible {
 .wabby-boton-flotante:hover {
   transform: scale(1.06);
 }
+
+/* TARJETAS DE PRODUCTO */
+
+.producto-botanico {
+  position: relative;
+  align-items: stretch;
+  overflow: hidden;
+  padding: 14px;
+  border: 1px solid #f1c5b4;
+  border-radius: 30px;
+  background: linear-gradient(155deg, #fffef9 0%, #fff6e9 62%, #fff0ed 100%);
+  box-shadow: 0 12px 30px rgba(183, 91, 94, 0.12);
+}
+
+.producto-botanico::before {
+  position: absolute;
+  top: 0;
+  left: 28px;
+  width: 72px;
+  height: 6px;
+  border-radius: 0 0 8px 8px;
+  background: linear-gradient(90deg, #ff9a62, #ec5d83);
+  content: "";
+}
+
+.producto-botanico:hover {
+  border-color: #eaa08f;
+  box-shadow: 0 20px 38px rgba(183, 91, 94, 0.2);
+}
+
+.producto-imagen-contenedor {
+  position: relative;
+  display: grid;
+  min-height: 238px;
+  place-items: center;
+  overflow: hidden;
+  padding: 24px 18px 14px;
+  border-radius: 22px;
+  background: linear-gradient(140deg, #d9f2df 0%, #f5f4b9 100%);
+}
+
+.producto-imagen-contenedor::after {
+  position: absolute;
+  right: -28px;
+  bottom: -48px;
+  width: 132px;
+  height: 132px;
+  border: 18px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  content: "";
+  pointer-events: none;
+}
+
+.producto-etiqueta {
+  position: absolute;
+  z-index: 1;
+  top: 14px;
+  left: 14px;
+  max-width: calc(100% - 28px);
+  padding: 7px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 999px;
+  background: #fffaf0;
+  color: #a63c63;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.producto-imagen-contenedor img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 200px;
+  margin: 0;
+  object-fit: contain;
+  filter: drop-shadow(0 10px 10px rgba(65, 77, 50, 0.16));
+}
+
+.producto-contenido {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 18px 8px 6px;
+}
+
+.producto-subtitulo {
+  color: #47816b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.producto-botanico h3 {
+  margin: 8px 0;
+  color: #5b3268;
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif;
+  font-size: clamp(21px, 1.8vw, 26px);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.producto-botanico .descripcion-producto {
+  color: #716275;
+}
+
+.producto-botanico .precio-producto {
+  border: 0;
+  background: linear-gradient(100deg, #ffe398, #ffc58e);
+  color: #713e43;
+  box-shadow: inset 0 0 0 1px rgba(183, 106, 52, 0.08);
+  font-size: 23px;
+  letter-spacing: -0.025em;
+}
+
+.producto-botanico .precio-producto span {
+  color: #825853;
+}
+
+.producto-botanico .selector-cantidad {
+  border-color: #c9e6d9;
+  background: #eaf6ef;
+}
+
+.producto-botanico .selector-cantidad > span {
+  color: #426d5d;
+  font-weight: 750;
+}
+
+.producto-botanico .controles-cantidad button {
+  background: #4a9b79;
+  box-shadow: 0 3px 8px rgba(44, 115, 84, 0.18);
+}
+
+.producto-botanico .controles-cantidad button:hover:not(:disabled) {
+  background: #327b60;
+}
+
+.producto-botanico .controles-cantidad button:disabled {
+  background: #c9d8d0;
+  color: #f7fbf8;
+}
+
+.producto-botanico .controles-cantidad span {
+  color: #315d4d;
+}
+
+.producto-botanico .boton-comprar {
+  max-width: none;
+  border-radius: 16px;
+  background: linear-gradient(100deg, #e34f78, #bd3f78);
+  box-shadow: 0 7px 16px rgba(189, 63, 120, 0.24);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.015em;
+}
+
+.producto-botanico .boton-comprar:hover:not(:disabled) {
+  background: linear-gradient(100deg, #cf3d68, #a92f67);
+  box-shadow: 0 10px 20px rgba(169, 47, 103, 0.3);
+}
+
+.producto-botanico .boton-comprar:disabled {
+  background: #d8cfd4;
+  box-shadow: none;
+}
+
+@media (max-width: 600px) {
+  .producto-imagen-contenedor {
+    min-height: 210px;
+  }
+
+  .producto-imagen-contenedor img {
+    height: 176px;
+  }
+
+  .producto-contenido {
+    padding: 16px 5px 5px;
+  }
+}
+
+/* IDENTIDAD LILA PASTEL */
+
+:root {
+  --lila-fondo: #faf7ff;
+  --lila-suave: #f2ebfa;
+  --lila-claro: #e7daf4;
+  --lila-medio: #ceb6e5;
+  --lila: #a786c8;
+  --violeta: #80619f;
+  --violeta-oscuro: #5e4778;
+  --crema: #fdfbff;
+  --verde-natural: #c4b4d7;
+  --texto: #554a61;
+  --texto-suave: #80748b;
+  --borde: #e8def0;
+  --sombra: 0 12px 35px rgba(103, 73, 123, 0.1);
+}
+
+body {
+  color: var(--texto);
+  background: var(--crema);
+  font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+}
+
+.navbar {
+  background: rgba(253, 251, 255, 0.96);
+  border-bottom-color: var(--borde);
+  box-shadow: 0 4px 22px rgba(90, 63, 110, 0.09);
+}
+
+.navbar-nombre,
+.navbar-carrito {
+  color: var(--violeta-oscuro);
+}
+
+.navbar-nombre small {
+  color: var(--violeta);
+}
+
+.navbar-enlaces a {
+  color: var(--violeta);
+  background: var(--lila-fondo);
+  border: 1px solid var(--borde);
+}
+
+.navbar-enlaces a:hover {
+  color: var(--violeta-oscuro);
+  background: var(--lila-claro);
+}
+
+.navbar-carrito {
+  border-color: var(--lila-claro);
+  background: var(--lila-suave);
+}
+
+.navbar-carrito:hover,
+.carrito-cerrar:hover {
+  background: var(--lila-claro);
+}
+
+.carrito-contador {
+  background: var(--violeta);
+}
+
+.banner {
+  background: var(--lila-suave);
+}
+
+.productos-section {
+  background: linear-gradient(180deg, #fdfbff 0%, #f5effb 100%);
+}
+
+.section-title,
+.nosotros > h2,
+.contacto h2,
+.horario-atencion h3 {
+  color: var(--violeta-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: 0.015em;
+}
+
+.section-title::after {
+  display: block;
+  width: 68px;
+  height: 4px;
+  margin: 12px auto 0;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--lila-medio), var(--violeta));
+  content: "";
+}
+
+.section-description,
+.descripcion-producto {
+  color: var(--texto-suave);
+}
+
+.producto-botanico {
+  border-color: var(--borde);
+  background: linear-gradient(155deg, #fff 0%, #fdfbff 100%);
+  box-shadow: 0 12px 30px rgba(103, 73, 123, 0.1);
+}
+
+.producto-botanico::before {
+  background: linear-gradient(90deg, #d7c3ec, #a786c8);
+}
+
+.producto-botanico:hover {
+  border-color: var(--lila-medio);
+  box-shadow: 0 20px 38px rgba(103, 73, 123, 0.17);
+}
+
+.producto-imagen-contenedor {
+  min-height: 238px;
+  background: #fff;
+  box-shadow: inset 0 0 0 1px #f0eaf5;
+}
+
+.producto-imagen-contenedor::after {
+  display: none;
+}
+
+.producto-imagen-contenedor img {
+  filter: drop-shadow(0 8px 10px rgba(80, 63, 96, 0.1));
+}
+
+.producto-etiqueta {
+  border-color: var(--lila-claro);
+  background: var(--lila-fondo);
+  color: var(--violeta-oscuro);
+}
+
+.producto-subtitulo {
+  color: var(--violeta);
+}
+
+.producto-botanico h3 {
+  color: var(--violeta-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.producto-botanico .descripcion-producto {
+  color: var(--texto-suave);
+}
+
+.producto-botanico .precio-producto {
+  border: 1px solid var(--lila-claro);
+  background: linear-gradient(100deg, #f5effb, #eee4f7);
+  color: var(--violeta-oscuro);
+  box-shadow: none;
+}
+
+.producto-botanico .precio-producto span {
+  color: var(--violeta);
+}
+
+.producto-botanico .selector-cantidad {
+  border-color: var(--lila-claro);
+  background: var(--lila-fondo);
+}
+
+.producto-botanico .selector-cantidad > span,
+.producto-botanico .controles-cantidad span {
+  color: var(--violeta-oscuro);
+}
+
+.producto-botanico .controles-cantidad button {
+  background: var(--lila);
+  box-shadow: 0 3px 8px rgba(103, 73, 123, 0.16);
+}
+
+.producto-botanico .controles-cantidad button:hover:not(:disabled) {
+  background: var(--violeta);
+}
+
+.producto-botanico .controles-cantidad button:disabled {
+  background: #e3dce9;
+  color: #fff;
+}
+
+.producto-botanico .boton-comprar {
+  background: linear-gradient(100deg, #a786c8, #80619f);
+  box-shadow: 0 7px 16px rgba(128, 97, 159, 0.2);
+}
+
+.producto-botanico .boton-comprar:hover:not(:disabled) {
+  background: linear-gradient(100deg, #8969a9, #684e88);
+  box-shadow: 0 10px 20px rgba(104, 78, 136, 0.25);
+}
+
+.producto-botanico .boton-comprar:disabled {
+  background: #dcd4e3;
+  color: #fdfbff;
+  box-shadow: none;
+}
+
+.nosotros {
+  background: linear-gradient(180deg, #f8f3fc 0%, #f0e8f8 100%);
+}
+
+.nosotros-card {
+  border-color: var(--borde);
+  box-shadow: var(--sombra);
+}
+
+.nosotros-card::before {
+  background: linear-gradient(90deg, #d7c3ec, #bba0d8, #a786c8);
+}
+
+.nosotros-card h3 {
+  color: var(--violeta-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.nosotros-card p {
+  color: var(--texto);
+}
+
+.contacto {
+  background: linear-gradient(135deg, #eee5f7, #f8f4fc, #f0e9f7);
+}
+
+.contacto p {
+  color: var(--texto);
+}
+
+.boton-instagram {
+  background: linear-gradient(100deg, #a786c8, #80619f);
+  box-shadow: 0 6px 16px rgba(103, 73, 123, 0.18);
+}
+
+.boton-instagram:hover {
+  background: var(--violeta-oscuro);
+}
+
+.horario-atencion,
+.carrito-section,
+.formulario-pedido {
+  border: 1px solid var(--borde);
+  background: #fff;
+  box-shadow: var(--sombra);
+}
+
+.estado-abierto {
+  background: #f1ebf8;
+  color: var(--violeta-oscuro);
+}
+
+.estado-cerrado {
+  background: #f8edf3;
+  color: #875b78;
+}
+
+.carrito-overlay {
+  background: rgba(49, 37, 61, 0.42);
+}
+
+.carrito-panel {
+  background: #fdfbff;
+  box-shadow: -8px 0 35px rgba(66, 47, 85, 0.16);
+}
+
+.carrito-encabezado {
+  border-bottom-color: var(--borde);
+  background: linear-gradient(120deg, #f8f3fc, #fff);
+}
+
+.carrito-encabezado h2,
+.carrito-vacio h3 {
+  color: var(--violeta-oscuro);
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.carrito-etiqueta,
+.carrito-vacio > span,
+.carrito-confirmacion span {
+  color: var(--violeta);
+}
+
+.carrito-cerrar {
+  background: var(--lila-suave);
+  color: var(--violeta-oscuro);
+}
+
+.carrito-producto {
+  border-bottom-color: var(--borde);
+}
+
+.carrito-producto img {
+  border: 1px solid var(--borde);
+  background: #fff;
+}
+
+.carrito-producto-info h3,
+.carrito-controles span,
+.carrito-producto-final strong,
+.carrito-resumen > div {
+  color: var(--violeta-oscuro);
+}
+
+.carrito-producto-info p,
+.carrito-producto-final button,
+.carrito-resumen p,
+.carrito-resumen small,
+.carrito-vacio p {
+  color: var(--texto-suave);
+}
+
+.carrito-controles button {
+  border-color: var(--lila-claro);
+  background: var(--lila-fondo);
+  color: var(--violeta-oscuro);
+}
+
+.carrito-controles button:hover {
+  background: var(--lila-claro);
+}
+
+.carrito-resumen {
+  border-top-color: var(--borde);
+  background: var(--lila-fondo);
+}
+
+.carrito-resumen > button,
+.carrito-vacio button,
+.formulario-pedido button[type="submit"],
+.carrito-confirmacion button {
+  background: var(--violeta);
+  color: #fff;
+}
+
+.carrito-resumen > button:hover,
+.carrito-vacio button:hover,
+.formulario-pedido button[type="submit"]:hover,
+.carrito-confirmacion button:hover {
+  background: var(--violeta-oscuro);
+}
+
+.carrito-confirmacion,
+.carrito-confirmacion h2 {
+  color: var(--violeta-oscuro);
+}
+
+.formulario-pedido {
+  color: var(--texto);
+}
+
+.formulario-pedido h2,
+.formulario-pedido h3,
+.formulario-total strong,
+.carrito-confirmacion h2 {
+  color: var(--violeta-oscuro);
+}
+
+.formulario-pedido button[type="submit"] {
+  color: #fff;
+}
+
+.formulario-pedido h3 {
+  border-bottom-color: var(--borde);
+}
+
+.formulario-pedido p,
+.formulario-pedido label {
+  color: var(--texto);
+}
+
+.formulario-pedido input:not([type="checkbox"]),
+.formulario-pedido select,
+.formulario-pedido textarea,
+.formulario-datos input,
+.formulario-datos select,
+.formulario-datos textarea {
+  border-color: var(--borde);
+  background: #fdfbff;
+  color: var(--texto);
+}
+
+.formulario-pedido input:focus,
+.formulario-pedido select:focus,
+.formulario-pedido textarea:focus,
+.formulario-datos input:focus,
+.formulario-datos select:focus,
+.formulario-datos textarea:focus {
+  border-color: var(--lila);
+  box-shadow: 0 0 0 3px rgba(167, 134, 200, 0.18);
+}
+
+.formulario-total,
+.resumen-pedido {
+  background: var(--lila-fondo);
+}
+
+.formulario-consentimiento input {
+  accent-color: var(--violeta);
+}
+
+.formulario-volver,
+.boton-volver {
+  color: var(--violeta-oscuro);
+}
+
+.wabby-boton-flotante {
+  background: linear-gradient(100deg, var(--lila), var(--violeta-oscuro));
+}
+
+@media (max-width: 600px) {
+  .producto-imagen-contenedor {
+    background: #fff;
+  }
+}
+
+.acceso-administrador {
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 18px auto 0;
+  padding: 10px 17px;
+  border: 1px solid var(--lila-medio);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--violeta-oscuro);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.acceso-administrador:hover {
+  transform: translateY(-2px);
+  border-color: var(--violeta);
+  background: var(--lila-suave);
+}
+
+.acceso-administrador:focus-visible {
+  outline: 3px solid var(--lila-medio);
+  outline-offset: 3px;
+}
