@@ -35,7 +35,7 @@ function Navbar({ cantidadCarrito = 0, abrirCarrito }) {
     <nav className="navbar" aria-label="Navegación principal">
       <a href="/" className="navbar-marca">
         <img
-          src="/public/Logo.png"
+          src="/Logo.png"
           alt="Logo de MAR DE LINO"
           className="navbar-logo"
         />
