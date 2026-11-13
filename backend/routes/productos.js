@@ -8,7 +8,10 @@ const protegerAdmin = require("../middleware/protegerAdmin");
 // 1. Obtener todos los productos activos
 router.get("/", async (req, res) => {
   try {
-    const productos = await Producto.find({ activo: true });
+    const productos = await Producto.find({ activo: true })
+    .collation({ locale: "es", strength: 1 })
+    .sort({tipo: 1,nombre: 1});
+    
     res.json(productos);
   } catch (error) {
     res.status(500).json({
