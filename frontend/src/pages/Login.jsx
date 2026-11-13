@@ -41,7 +41,7 @@ function Login() {
       <section className="login-card">
         <div className="login-brand">
           <img
-            src="/public/logo.png"
+            src="/logo.png"
             alt="Logo de MAR DE LINO"
             className="login-brand-logo"
           />
