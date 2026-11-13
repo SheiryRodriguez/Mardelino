@@ -111,7 +111,7 @@ console.log("Gemini respondio:",respuestaGemini.output_text);
     });
 
   } catch (error) {
-    console.error("Error de Wabby:", error.message);
+    console.error("ERROR COMPLETO DE WABBY:", error);
 
     res.status(500).json({
       respuesta: "¡Ups! Tuve un pequeño problema. Inténtalo nuevamente 🌸",

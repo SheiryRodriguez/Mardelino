@@ -25,7 +25,7 @@ function Wabby() {
     setCargando(true);
 
     try {
-      const respuesta = await fetch("http://localhost:5000/api/wabby/chat", {
+      const respuesta = await fetch("https://mardelino.onrender.com/api/wabby/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ mensaje: texto })
@@ -59,7 +59,7 @@ function Wabby() {
         <section className="wabby-ventana">
           <header className="wabby-encabezado">
             <div className="wabby-avatar">
-              <img src="/public/logo.png" alt="Logo de Mar de Lino" />
+              <img src="/logo.png" alt="Logo de Mar de Lino" />
             </div>
 
             <div className="wabby-identidad">
