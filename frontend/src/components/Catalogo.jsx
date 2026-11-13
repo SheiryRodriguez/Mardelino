@@ -7,7 +7,7 @@ function Catalogo({ agregarProducto }) {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    fetch("httpss://mardelino.onrender.com/api/productos")
+    fetch("https://mardelino.onrender.com/api/productos")
       .then((respuesta) => {
         if (!respuesta.ok) {
           throw new Error("No se pudieron cargar los productos");
