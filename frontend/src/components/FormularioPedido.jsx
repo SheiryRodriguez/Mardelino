@@ -38,7 +38,7 @@ function FormularioPedido({ carrito, onVolver, onPedidoExitoso }) {
 
     try {
       const respuesta = await axios.post(
-        "https://mardelino.onrender/api/pedidos",
+        "https://mardelino.onrender.com/api/pedidos",
         {
           cliente: {
             nombre: formulario.nombre,
